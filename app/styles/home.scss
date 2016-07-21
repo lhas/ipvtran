@@ -1,0 +1,40 @@
+#area-aluno {
+    float: left;
+    width: 100%;
+    background: #016fa8;
+    color: #FFF;
+    padding: 20px 24px;
+
+    h1 {
+        font-size: 18px;
+        font-family: 'Open Sans';
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    button {
+        background: #bbe276;
+        color: #FFF;
+        font-weight: bold;
+        font-size: 12px;
+        font-family: 'Open Sans';
+    }
+
+    a {
+        color: #FFF;
+        text-decoration: none;
+        font-size: 12px;
+        font-family: 'Open Sans';
+
+        i {
+            margin-right: 6px;
+        }
+    }
+}
+
+#carousel-banners {
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-bottom: 40px;
+}
