@@ -38,3 +38,139 @@
     width: 100%;
     margin-bottom: 40px;
 }
+
+.well {
+    border: none;
+    box-shadow: none;
+    border-radius: 0px !important;
+    color: #FFF;
+    height: 200px;
+
+    i.fa {
+        font-size: 44px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+        text-transform: none;
+    }
+}
+
+.well-amarelo {
+    background: #d3d142;
+}
+
+.well-vermelho {
+    background: #f36969;
+}
+
+.well-verde {
+    background: #47c67a;
+}
+.well-laranja {
+    background: #df995a;
+}
+
+#chamadas {
+    margin-bottom: 40px;
+    p {
+        text-align: center;
+        font-family: 'Open Sans';
+        font-size: 14px;
+        line-height: 20px;
+        color: #333;
+    }
+    .btn {
+        background:transparent;
+        font-weight: bold;
+        font-family: 'Open Sans';
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .btn-yellow {
+        border: 1px solid #d3d142;
+        color: #d3d142;
+
+        &:hover {
+            background: #d3d142;
+            color: #FFF;
+        }
+    }
+    .btn-red {
+        border: 1px solid #f36969;
+        color: #f36969;
+
+        &:hover {
+            background: #f36969;
+            color: #FFF;
+        }
+    }
+    .btn-green {
+        border: 1px solid #47c67a;
+        color: #47c67a;
+
+        &:hover {
+            background: #47c67a;
+            color: #FFF;
+        }
+    }
+    .btn-orange {
+        border: 1px solid #df995a;
+        color: #df995a;
+
+        &:hover {
+            background: #df995a;
+            color: #FFF;
+        }
+    }
+}
+
+#links-uteis {
+    float: left;
+    width: 100%;
+    clear: both;
+    min-height: 520px;
+    background: #f7f7f7;
+
+    h2 {
+        float: left;
+        width: 100%;
+        clear: both;
+        height: 57px;
+        line-height: 57px;
+        background: #60a7cc;
+        color: #2a2a2a;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: 'Open Sans';
+        padding-left: 20px;
+        margin: 0px;
+        margin-bottom: 40px;
+
+        i.fa {
+            color: #f6cf47;
+            font-size: 24px;
+        }
+    }
+
+    a {
+        float: left;
+        width: 100%;
+        clear: both;
+        height: 42px;
+        line-height: 42px;
+        padding-left: 20px;
+        border-bottom: 1px solid #ececec;
+        text-decoration: none;
+        color: #2a2a2a;
+        font-size: 18px;
+
+        &:hover {
+            background: #2a2a2a;
+            color: #FFF;
+        }
+
+    }
+}
