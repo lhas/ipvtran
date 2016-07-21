@@ -1,0 +1,81 @@
+<!-- contato.html -->
+{% extends "layout.html" %}
+{% set active = "contato" %}
+
+{% block content %}
+    
+    <div class="container">
+
+      <div id="institucional" class="row">
+        <div id="miolo" class="col-lg-9">
+          
+          <h1 class="page-title">Contato</h1>
+
+          <div class="row">
+            <div class="col-lg-8">
+
+              <form action="">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Nome:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>E-mail:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Telefone (com DDD):</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Motivo do Contato:</label>
+                      <select name="" id="" class="form-control">
+                        <option value="">Selecionar</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    
+                    <div class="form-group">
+                      <label>Mensagem:</label>
+                      <textarea rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <button class="btn btn-primary btn-block">Enviar</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-4">
+
+              <p>
+                <i class="fa fa-map-marker"></i> Rua Gen. Liberato Bittencourt 1885
+                  Ed. Centro Executivo Imperatriz, 
+                  CEP 88.070-800
+                  Florianópolis / SC
+              </p>
+
+              <p>
+                <i class="fa fa-phone"></i> (21) 2555 - 2555
+              </p>
+
+              <p>
+                <i class="fa fa-envelope-o"></i> info@ipvtran.com.br
+              </p>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-lg-3">
+
+          {% include "partials/area-aluno.html" %}
+          
+        </div>
+      </div>
+
+    </div> <!-- .container -->
+{% endblock %}

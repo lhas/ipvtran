@@ -4,6 +4,7 @@ const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
 const del = require('del');
 const wiredep = require('wiredep').stream;
+const nunjucksRender = require('gulp-nunjucks-render');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -114,6 +115,8 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
     '.tmp/fonts/**/*'
   ]).on('change', reload);
 
+  gulp.watch('app/pages/**/*.html', ['nunjucks']);
+  gulp.watch('app/templates/**/*.html', ['nunjucks']);
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/fonts/**/*', ['fonts']);
@@ -163,6 +166,17 @@ gulp.task('wiredep', () => {
       ignorePath: /^(\.\.\/)*\.\./
     }))
     .pipe(gulp.dest('app'));
+});
+
+gulp.task('nunjucks', function() {
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('app/pages/**/*.+(html|nunjucks)')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+      path: ['app/templates']
+    }))
+  // output files in app folder
+  .pipe(gulp.dest('app'))
 });
 
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
