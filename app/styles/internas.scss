@@ -10,9 +10,15 @@
     margin-bottom: 50px;
 }
 
-#miolo p {
-    font-family: 'Lato';
-    font-size: 20px;
-    line-height: 26px;
-    margin-bottom: 40px;
+#miolo,.miolo {
+    
+    .well {
+        color: #222;
+    }
+    p {
+        font-family: 'Lato';
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 40px;
+    }
 }
