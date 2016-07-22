@@ -1,7 +1,7 @@
 #topmenu {
     float: left;
     width: 100%;
-    min-height: 30px;
+    min-height: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
     background: #026fa7;
@@ -17,14 +17,26 @@
         margin-left: 10px;
         margin-right: 10px;
         display: inline-block;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+        padding: 5px;
 
         &.circle {
+            padding: 0px;
             width: 30px;
             height: 30px;
-            line-height: 30px;
+            line-height: 25px;
             text-align: center;
             border: 2px solid #FFF;
             border-radius: 100%;
+
+            &:hover {
+                background: #FFF;
+                color: #026fa7;
+            }
         }
     }
 }
@@ -48,6 +60,14 @@
             color: #2a2a2a;
             margin: 0px 20px;
             text-decoration: none;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                opacity: 0.8;
+            }
 
             &.active,&:hover {
                 border-bottom: 4px solid #026fa7;
