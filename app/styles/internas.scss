@@ -1,24 +1,64 @@
 #institucional {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .page-title {
-    font-weight: bold;
-    font-family: 'Lato';
-    font-size: 30px;
-    color: #016fa8;
-    margin-bottom: 50px;
+  font-weight: bold;
+  font-family: 'Lato';
+  font-size: 30px;
+  color: #016fa8;
+  margin-top: 0px;
+  margin-bottom: 50px;
 }
 
 #miolo,.miolo {
-    
-    .well {
-        color: #222;
+  
+  .well {
+      color: #222;
+  }
+  p {
+      font-family: 'Lato';
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 40px;
+  }
+}
+
+#contato {
+  label {
+      font-weight: normal;
+      font-family: 'Open Sans';
+      font-size: 14px;
+  }
+
+  textarea {
+      height: 204px;
+      resize: none;
+  }
+
+  button {
+    border-radius: 0px;
+    background: #026fa7;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  #lateral {
+    display: inline-block;
+    margin-top: 24px;
+
+    i {
+      font-size: 18px;
+      color: #363636;
     }
+
     p {
-        font-family: 'Lato';
-        font-size: 20px;
-        line-height: 26px;
-        margin-bottom: 40px;
+      font-size: 14px;
+      line-height: 20px;
+      font-family: 'Lato';
+      margin-bottom: 10px;
     }
+  }
 }

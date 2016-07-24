@@ -59,7 +59,7 @@ gulp.task('lint:test', () => {
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
-  return gulp.src('app/*.html')
+  return gulp.src(['.tmp/*.html'])
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
@@ -97,7 +97,7 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
+gulp.task('serve', ['nunjucks', 'styles', 'scripts', 'fonts'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -111,6 +111,7 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
 
   gulp.watch([
     'app/*.html',
+    '.tmp/*.html',
     'app/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
@@ -160,12 +161,12 @@ gulp.task('wiredep', () => {
     }))
     .pipe(gulp.dest('app/styles'));
 
-  gulp.src('app/*.html')
+  gulp.src('app/templates/*.html')
     .pipe(wiredep({
-      exclude: ['bootstrap-sass'],
+      exclude: ['bootstrap-sass', 'jquery'],
       ignorePath: /^(\.\.\/)*\.\./
     }))
-    .pipe(gulp.dest('app'));
+    .pipe(gulp.dest('app/templates'));
 });
 
 gulp.task('nunjucks', function() {
@@ -176,10 +177,10 @@ gulp.task('nunjucks', function() {
       path: ['app/templates']
     }))
   // output files in app folder
-  .pipe(gulp.dest('app'))
+  .pipe(gulp.dest('.tmp'))
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'nunjucks', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

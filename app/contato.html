@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html ng-app="ipvtran" lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -69,7 +69,7 @@
     
     <div class="container">
 
-      <div id="institucional" class="row">
+      <div id="contato" ng-controller="ContatoCtrl" class="row">
         <div id="miolo" class="col-lg-9">
           
           <h1 class="page-title">Contato</h1>
@@ -77,58 +77,93 @@
           <div class="row">
             <div class="col-lg-8">
 
-              <form action="">
+              <form name="contactForm" ng-submit="submitForm()" novalidate>
                 <div class="row">
                   <div class="col-lg-6">
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error' : contactForm.name.$invalid && !contactForm.name.$pristine }">
                       <label>Nome:</label>
-                      <input type="text" class="form-control">
+                      <input type="text" name="name" class="form-control" class="form-control" ng-model="contact.name" required>
+
+                      <p ng-show="contactForm.name.$invalid && !contactForm.name.$pristine" class="help-block">You name is required.</p>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
                       <label>E-mail:</label>
-                      <input type="text" class="form-control">
+                      <input type="email" name="email" class="form-control" ng-model="contact.email" required>
+
+                      <p ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="help-block">Enter a valid email.</p>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error' : contactForm.phone.$invalid && !contactForm.phone.$pristine }">
                       <label>Telefone (com DDD):</label>
-                      <input type="text" class="form-control">
+                      <input type="text" name="phone" ng-model="contact.phone" ui-mask="(99) 9999-9999?9" required minlength="8" class="form-control">
+                    
+                      <p ng-show="contactForm.phone.$invalid && !contactForm.phone.$pristine" class="help-block">Enter a valid phone.</p>
+                    
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error' : contactForm.motivo.$invalid && !contactForm.motivo.$pristine }">
                       <label>Motivo do Contato:</label>
-                      <select name="" id="" class="form-control">
+                      <select name="motivo" ng-model="contact.motivo" required class="form-control">
                         <option value="">Selecionar</option>
+                        <option value="exemplo">Exemplo</option>
                       </select>
+                      
+                      <p ng-show="contactForm.motivo.$invalid && !contactForm.motivo.$pristine" class="help-block">Enter a valid motivo.</p>
+                    
                     </div>
                   </div>
                   <div class="col-lg-6">
-                    
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error' : contactForm.message.$invalid && !contactForm.message.$pristine }">
                       <label>Mensagem:</label>
-                      <textarea rows="10" class="form-control"></textarea>
+                      <textarea ng-model="contact.message" name="message" required rows="10" class="form-control"></textarea>
+                      
+                      <p ng-show="contactForm.message.$invalid && !contactForm.message.$pristine" class="help-block">Enter a valid message.</p>
                     </div>
 
                     <div class="form-group">
-                      <button class="btn btn-primary btn-block">Enviar</button>
+                      <button class="btn btn-primary btn-block" ng-disabled="contactForm.$invalid">Enviar</button>
                     </div>
                   </div>
                 </div>
               </form>
             </div>
-            <div class="col-lg-4">
+            <div id="lateral" class="col-lg-4">
 
-              <p>
-                <i class="fa fa-map-marker"></i> Rua Gen. Liberato Bittencourt 1885
-                  Ed. Centro Executivo Imperatriz, 
-                  CEP 88.070-800
-                  Florianópolis / SC
-              </p>
 
-              <p>
-                <i class="fa fa-phone"></i> (21) 2555 - 2555
-              </p>
+              <div class="row">
+                <div class="col-xs-1">
+                  <i class="fa fa-map-marker"></i>
+                </div>
+                <div class="col-xs-9">
+                  <p>
+                    Rua Gen. Liberato Bittencourt 1885
+                      Ed. Centro Executivo Imperatriz, 
+                      CEP 88.070-800
+                      Florianópolis / SC
+                  </p>
+                </div>
+              </div>
 
-              <p>
-                <i class="fa fa-envelope-o"></i> info@ipvtran.com.br
-              </p>
+              <div class="row">
+                <div class="col-xs-1">
+                  <i class="fa fa-phone"></i> 
+                </div>
+                <div class="col-xs-9">
+                  <p>
+                    (21) 2555 - 2555
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-1">
+                  <i class="fa fa-at"></i> 
+                </div>
+                <div class="col-xs-9">
+                  <p>
+                    info@ipvtran.com.br
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
           
@@ -136,7 +171,7 @@
         <div class="col-lg-3">
 
           <div id="area-aluno">
-    <h1><i class="fa fa-users"></i> Área do Aluno</h1>
+    <h1><i class="fa fa-user"></i> Área do Aluno</h1>
     <p>Entre com seus dados de acesso</p>
 
     <form action="">
@@ -253,23 +288,13 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
     <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->

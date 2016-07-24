@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html ng-app="ipvtran" lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -85,7 +85,7 @@
         <div class="col-lg-3">
 
           <div id="area-aluno">
-    <h1><i class="fa fa-users"></i> Área do Aluno</h1>
+    <h1><i class="fa fa-user"></i> Área do Aluno</h1>
     <p>Entre com seus dados de acesso</p>
 
     <form action="">
@@ -110,7 +110,17 @@
 
       <div class="row">
     <div class="col-lg-8">
-        <img src="images/banner2.jpg" class="img-responsive" alt="">
+        
+        <div id="carousel-banners" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <a href="#" class="item active">
+                    <div class="mascara"></div>
+                    <h2>Ainda tem dúvidas? <span>Clique e acesse nosso FAQ</span></h2>
+
+                    <img alt="Banner" src="images/banner_duvidas.jpg">
+                </a>
+            </div>
+        </div>
     </div>
     <div class="col-lg-4">
 
@@ -226,23 +236,13 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
     <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->

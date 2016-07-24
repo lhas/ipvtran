@@ -3,20 +3,25 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
-    "font-awesome": "fontawesome#^4.6.3"
+    "font-awesome": "fontawesome#^4.6.3",
+    "angular": "^1.5.8",
+    "angular-ui-mask": "^1.8.6",
+    "angular-bootstrap": "^2.0.0"
   },
   "overrides": {
+    "jquery": {
+      "main": []
+    },
     "bootstrap-sass": {
       "main": [
         "assets/stylesheets/_bootstrap.scss",
-        "assets/fonts/bootstrap/*",
-        "assets/javascripts/bootstrap.js"
+        "assets/fonts/bootstrap/*"
       ]
     },
     "fontawesome": {
       "main": [
-          "css/font-awesome.css",
-          "fonts/*"
+        "css/font-awesome.css",
+        "fonts/*"
       ]
     }
   },
