@@ -161,7 +161,8 @@ return [
         /*
          * Custom Providers
          */
-        Serverfireteam\Panel\PanelServiceProvider::class
+        Serverfireteam\Panel\PanelServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class
 
     ],
 

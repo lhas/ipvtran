@@ -25,21 +25,21 @@
                   <div class="col-lg-6">
                     <div class="form-group" ng-class="{ 'has-error' : contactForm.name.$invalid && !contactForm.name.$pristine }">
                       <label>Nome:</label>
-                      <input type="text" name="name" class="form-control" class="form-control" ng-model="contact.name" required>
+                      <input type="text" name="name" class="form-control" class="form-control" ng-model="contact.nome" required>
 
-                      <p ng-show="contactForm.name.$invalid && !contactForm.name.$pristine" class="help-block">You name is required.</p>
+                      <p ng-show="contactForm.name.$invalid && !contactForm.name.$pristine" class="help-block">Nome é obrigatório.</p>
                     </div>
                     <div class="form-group" ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
                       <label>E-mail:</label>
                       <input type="email" name="email" class="form-control" ng-model="contact.email" required>
 
-                      <p ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                      <p ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="help-block">E-mail está inválido.</p>
                     </div>
                     <div class="form-group" ng-class="{ 'has-error' : contactForm.phone.$invalid && !contactForm.phone.$pristine }">
                       <label>Telefone (com DDD):</label>
                       <input type="text" name="phone" ng-model="contact.phone" ui-mask="(99) 9999-9999?9" required minlength="8" class="form-control">
                     
-                      <p ng-show="contactForm.phone.$invalid && !contactForm.phone.$pristine" class="help-block">Enter a valid phone.</p>
+                      <p ng-show="contactForm.phone.$invalid && !contactForm.phone.$pristine" class="help-block">Telefone está inválido.</p>
                     
                     </div>
                     <div class="form-group" ng-class="{ 'has-error' : contactForm.motivo.$invalid && !contactForm.motivo.$pristine }">
@@ -49,7 +49,7 @@
                         <option value="exemplo">Exemplo</option>
                       </select>
                       
-                      <p ng-show="contactForm.motivo.$invalid && !contactForm.motivo.$pristine" class="help-block">Enter a valid motivo.</p>
+                      <p ng-show="contactForm.motivo.$invalid && !contactForm.motivo.$pristine" class="help-block">Selecione um motivo.</p>
                     
                     </div>
                   </div>
@@ -58,7 +58,7 @@
                       <label>Mensagem:</label>
                       <textarea ng-model="contact.message" name="message" required rows="10" class="form-control"></textarea>
                       
-                      <p ng-show="contactForm.message.$invalid && !contactForm.message.$pristine" class="help-block">Enter a valid message.</p>
+                      <p ng-show="contactForm.message.$invalid && !contactForm.message.$pristine" class="help-block">Mensagem é obrigatória.</p>
                     </div>
 
                     <div class="form-group">
