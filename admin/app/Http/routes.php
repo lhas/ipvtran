@@ -11,11 +11,13 @@
 |
 */
 
+// Redireciona para painel do Laravel
 Route::get('/', function () {
-    return view('welcome');
+    return Redirect::to('/panel');
 });
 
-Route::post('/send', 'EmailController@send');
+// Contato
+Route::post('/send', 'Api\EmailController@send');
 
-Route::get('/records/send', 'RecordsController@send');
-Route::post('/records/send', 'RecordsController@send');
+// Inscrição
+Route::post('/records/send', 'Api\RecordsController@send');
