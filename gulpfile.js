@@ -5,6 +5,7 @@ const browserSync = require('browser-sync');
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const nunjucksRender = require('gulp-nunjucks-render');
+const gulpNgConfig = require('gulp-ng-config');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -89,7 +90,8 @@ gulp.task('fonts', () => {
 gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
-    '!app/*.html'
+    '!app/*.html',
+    '!app/config.*.json'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
@@ -97,7 +99,8 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['nunjucks', 'styles', 'scripts', 'fonts'], () => {
+gulp.task('serve', ['config:local', 'nunjucks', 'styles', 'scripts', 'fonts'], () => {
+
   browserSync({
     notify: false,
     port: 9000,
@@ -180,7 +183,22 @@ gulp.task('nunjucks', function() {
   .pipe(gulp.dest('.tmp'))
 });
 
-gulp.task('build', ['lint', 'nunjucks', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('config:local', () => {
+  return gulp.src('app/config.local.json')
+  .pipe(gulpNgConfig('ipvtran.config'))
+  .pipe($.rename('config.js'))
+  .pipe(gulp.dest('app/scripts'));
+});
+
+gulp.task('config:production', () => {
+  return gulp.src('app/config.production.json')
+  .pipe(gulpNgConfig('ipvtran.config'))
+  .pipe($.rename('config.js'))
+  .pipe(gulp.dest('app/scripts'));
+});
+
+gulp.task('build', ['config:production', 'lint', 'nunjucks', 'html', 'images', 'fonts', 'extras'], () => {
+
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

@@ -12,15 +12,45 @@
 }
 
 #miolo,.miolo {
+
+  #grade {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 30px;
+    color: #595959;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  #siga {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 20px;
+    color: #595959;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  #prazo {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #595959;
+
+  }
   
   .well {
       color: #222;
+      box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
   }
   p {
       font-family: 'Lato';
       font-size: 20px;
       line-height: 26px;
       margin-bottom: 40px;
+      color: #595959;
   }
 }
 
@@ -60,5 +90,41 @@
       font-family: 'Lato';
       margin-bottom: 10px;
     }
+  }
+}
+
+#dados-inscricao {
+  small {
+    display: block;
+    font-size: 10px;
+  }
+
+  p {
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #595959;
+    margin-bottom: 30px;
+  }
+
+  label {
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #595959;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+
+  button {
+    border-radius: 0px;
+    border: none;
+    font-family: 'Lato';
+    font-size: 20px;
+    height: 88px;
+    line-height: 88px;
+    padding: 0px;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
   }
 }

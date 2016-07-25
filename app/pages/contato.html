@@ -6,7 +6,7 @@
     
     <div class="container">
 
-      <div id="contato" ng-controller="ContatoCtrl" class="row">
+      <div id="institucional" ng-controller="ContatoCtrl" class="row">
         <div id="miolo" class="col-lg-9">
           
           <h1 class="page-title">Contato</h1>
@@ -17,7 +17,7 @@
 
           <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" ng-bind="alert.msg"></div>
 
-          <div class="row">
+          <div id="contato" class="row">
             <div class="col-lg-8">
 
               <form name="contactForm" ng-submit="submitForm(contact)" novalidate>

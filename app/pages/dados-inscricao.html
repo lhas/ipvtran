@@ -1,0 +1,62 @@
+<!-- inscreva.html -->
+{% extends "layout.html" %}
+{% set active = "inscreva" %}
+
+{% block content %}
+    
+    <div id="dados-inscricao" ng-controller="InscricaoCtrl" class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          
+          <h1 class="page-title">Inscreva-se já:</h1>
+
+          <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" ng-bind="alert.msg"></div>
+
+          <p>Preencha os campos a seguir:</p>
+          
+        </div>
+      </div>
+      <div class="row">
+        
+              <form name="inscricaoForm" ng-submit="submitForm(inscricao)" novalidate>
+
+        <div class="col-xs-3">
+
+          <div class="form-group">
+            <label>CPF</label>
+            <input type="text" name="cpf" ng-model="inscricao.cpf" ui-mask="999.999.999-99" required minlength="11" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Formulário Renach <small>(Protocolo fornecido pelo DETRAN)</small></label>
+            <input type="text" name="renach" ng-model="inscricao.renach" ui-mask="AA ********" required minlength="6" class="form-control">
+          </div>
+          
+        </div>
+        <div class="col-xs-4 col-xs-offset-1">
+
+          <div class="form-group">
+            <label>Nascimento</label>
+            <input type="text" name="nascimento" ng-model="inscricao.nascimento" ui-mask="99/99/9999" required minlength="8" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Categoria <small>(Categoria da habilitação. Ex: A para veículo motorizado de duas ou três rodas)</small></label>
+            <select name="categoria" class="form-control" ng-model="inscricao.categoria" required>
+              <option value="">Selecionar</option>
+              <option value="A">A</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <button class="btn btn-block btn-primary btn-lg" ng-disabled="inscricaoForm.$invalid">Próxima Etapa >></button>
+          </div>
+          
+        </div>
+
+              </form>
+
+      </div>
+
+    </div> <!-- .container -->
+{% endblock %}

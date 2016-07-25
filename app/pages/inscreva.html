@@ -13,11 +13,11 @@
         </div>
       </div>
       <div id="institucional" class="row">
-        <div id="miolo" class="col-lg-8">
+        <div id="miolo" class="col-lg-7">
 
           <div class="well">
             
-            <h2>Siga as etapas abaixo para recuperar sua CNH:</h2>
+            <h2 id="siga">Siga as etapas abaixo para recuperar sua CNH:</h2>
 
             <p><strong>1º Passo</strong> – Entregar a CNH em um posto de habilitação mais próximo de sua residência ou no Núcleo de Documentos Apreendidos (NUDA); </p>
 
@@ -44,46 +44,68 @@
           </div>
           
         </div>
-        <div class="miolo col-lg-4">
+        <div class="miolo col-lg-5">
 
           <div class="well">
-            <h2>Grade Curricular</h2>
+            <h2 id="grade">Grade Curricular</h2>
 
             <table class="table">
               <thead>
                 <tr>
-                  <th>Módulo</th>
-                  <th>Horas/Aula</th>
+                  <th>MÓDULO</th>
+                  <th>HORAS/AULA</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class="info">
                   <td>Direção Defensiva</td>
-                  <td>8</td>
+                  <td class="text-center">8</td>
                 </tr>
                 <tr>
                   <td>Noções de Primeiros Socorros</td>
-                  <td>4</td>
+                  <td class="text-center">4</td>
                 </tr>
-                <tr>
+                <tr class="info">
                   <td>Legislação de Trânsito</td>
-                  <td>12</td>
+                  <td class="text-center">12</td>
                 </tr>
                 <tr>
                   <td>Relacionamento Interpessoal</td>
-                  <td>6</td>
+                  <td class="text-center">6</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div class="well">
-            <h2>O prazo mínimo de realização do curso é de 05 (cinco) dias.</h2>
+            <h2 id="prazo">O prazo mínimo de realização do curso é de <br> 05 (cinco) dias.</h2>
             
             <p>O valor do curso à vista no boleto é de R$270,00 (duzentos e setenta reais).</p>
 
             <p>O valor do curso no cartão é de R$270,00 (Duzentos e setenta reais) reais em até 12 vezes ou 2 vezes sem juros - esta opção fica condicionada as regras da operadora deste sistema</p>
           </div>
+
+          <div class="clearfix"></div>
+          
+          <h1 class="page-title">Inscreva-se já:</h1>
+
+          <p>Para se inscrever selecione seu Estado:</p>
+
+          <div ng-controller="InscricaoCtrl">
+
+            <div class="form-group">
+              <select name="estado" id="estado" ng-model="inscricao.estado" class="form-control input-lg">
+                <option value="">Selecionar</option>
+                <option value="RJ">Rio de Janeiro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <a href="dados-inscricao.html" ng-if="inscricao.estado" class="btn btn-success btn-block btn-lg">Avançar</a>
+            </div>
+
+          </div>
+
         </div>
       </div>
 
