@@ -5,8 +5,9 @@ angular.module('ipvtran', [
   'ipvtran.config'
 ]);
 
-angular.module('ipvtran').config(['$compileProvider', function ($compileProvider) {
-    // $compileProvider.debugInfoEnabled(false);
+angular.module('ipvtran').config(['$compileProvider', '$sceProvider', function ($compileProvider, $sceProvider) {
+    $compileProvider.debugInfoEnabled(false);
+    $sceProvider.enabled(false);
 }]);
 
 // directives.js
@@ -23,13 +24,24 @@ InscricaoCtrl.$inject = ['$scope', '$http', 'apiURL'];
 function InscricaoCtrl($scope, $http, apiURL) {
   $scope.alerts = [];
 
-  $scope.submitForm = function(inscricao) {
+  $scope.submitForm = function(record) {
 
     // waiting alert
     $scope.alerts.push({type: 'warning', msg: 'Enviando...'});
-    
-    // reset form and model
-    $scope.inscricao = {};
+
+    // AJAX
+    $http.post(apiURL + 'records/send', record).then(function(result) {
+      $scope.record = result.data;
+
+      // reset model
+      $scope.inscricao = {concluido: true};
+
+      $scope.alerts.push({type: 'success', msg: 'Inscrição Aprovada! Efetue o pagamento no PayPal.'});
+    }).catch(function(error) {
+      $scope.alerts.push({type: 'danger', msg: error});
+    });
+
+    // reset form
     $scope.inscricaoForm.$setPristine();
   }
 }

@@ -177,7 +177,17 @@ gulp.task('nunjucks', function() {
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
   // Renders template with nunjucks
   .pipe(nunjucksRender({
-      path: ['app/templates']
+      path: ['app/templates'],
+      envOptions: {
+        tags: {
+          blockStart: '<%',
+          blockEnd: '%>',
+          variableStart: '<$',
+          variableEnd: '$>',
+          commentStart: '<#',
+          commentEnd: '#>'
+        }
+      }
     }))
   // output files in app folder
   .pipe(gulp.dest('.tmp'))

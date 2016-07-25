@@ -1,8 +1,8 @@
 <!-- inscreva.html -->
-{% extends "layout.html" %}
-{% set active = "inscreva" %}
+<% extends "layout.html" %>
+<% set active = "inscreva" %>
 
-{% block content %}
+<% block content %>
     
     <div id="dados-inscricao" ng-controller="InscricaoCtrl" class="container">
       <div class="row">
@@ -57,6 +57,22 @@
               </form>
 
       </div>
+      <div ng-if="inscricao.concluido" class="row">
+        <div class="col-xs-12 text-center">
+          
+          <h1 class="page-title">Pagamento</h1>
+
+          <p>Valor Final: <strong>R$270,00</strong></p>
+
+          <div class="form-group">
+            <a href="{{record.paypal_url}}" target="_blank" class="btn btn-success btn-block btn-lg">Efetuar Pagamento no Paypal</a>
+
+          </div>
+
+          <p>Ambiente Seguro</p>
+
+        </div>
+      </div>
 
     </div> <!-- .container -->
-{% endblock %}
+<% endblock %>

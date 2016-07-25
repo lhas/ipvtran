@@ -1,8 +1,8 @@
 <!-- index.html -->
-{% extends "layout.html" %}
-{% set active = "index" %}
+<% extends "layout.html" %>
+<% set active = "index" %>
 
-{% block content %}
+<% block content %>
     <div class="container">
 
       <div class="row">
@@ -29,7 +29,7 @@
         </div>
         <div class="col-lg-3">
           
-          {% include "partials/area-aluno.html" %}
+          <% include "partials/area-aluno.html" %>
           
         </div>
       </div>
@@ -77,7 +77,7 @@
         </div>
       </div> <!-- #chamadas.row -->
 
-      {% include "partials/links-uteis.html" %}
+      <% include "partials/links-uteis.html" %>
       
     </div> <!-- .container -->
-{% endblock %}
+<% endblock %>
