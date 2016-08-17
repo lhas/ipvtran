@@ -159,7 +159,7 @@
         -moz-transition: all 0.3s ease-in-out;
         -o-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
-        height: 50px;
+        height: 38px;
 
         &:hover {
             font-size: 19px;
@@ -249,4 +249,9 @@
         }
 
     }
+}
+
+.mh200 {
+    min-height: 130px;
+    display: inline-block;
 }

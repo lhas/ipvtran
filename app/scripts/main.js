@@ -15,11 +15,36 @@ angular.module('ipvtran').config(['$compileProvider', '$sceProvider', function (
 // factories.js
 
 // controllers.js
+angular.module('ipvtran').controller('HomeCtrl', HomeCtrl);
 angular.module('ipvtran').controller('ContatoCtrl', ContatoCtrl);
 angular.module('ipvtran').controller('InscricaoCtrl', InscricaoCtrl);
+angular.module('ipvtran').controller('ModalInstanceCtrl', ModalInstanceCtrl);
 
+ModalInstanceCtrl.$inject = ['$scope', '$uibModalInstance'];
+HomeCtrl.$inject = ['$scope', '$http', 'apiURL', '$uibModal'];
 ContatoCtrl.$inject = ['$scope', '$http', 'apiURL'];
 InscricaoCtrl.$inject = ['$scope', '$http', 'apiURL'];
+
+function ModalInstanceCtrl($scope, $uibModalInstance) {
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+};
+
+function HomeCtrl($scope, $http, apiURL, $uibModal) {
+
+  $scope.open = function (size, template) {
+
+    var modalInstance = $uibModal.open({
+      animation: true,
+      templateUrl: template,
+      controller: 'ModalInstanceCtrl',
+      size: size
+    });
+
+  };
+
+}
 
 function InscricaoCtrl($scope, $http, apiURL) {
   $scope.alerts = [];

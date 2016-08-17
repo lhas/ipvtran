@@ -2,19 +2,19 @@
     <h1><i class="fa fa-user"></i> Área do Aluno</h1>
     <p>Entre com seus dados de acesso</p>
 
-    <form action="">
+    <form action="http://ead.iprovida.org.br/login/index.php" target="_blank" method="POST">
         <div class="form-group">
-        <input type="text" placeholder="CPF" class="form-control">
+        <input type="text" name="username" placeholder="CPF" class="form-control">
         </div>
         <div class="form-group">
-        <input type="password" placeholder="Senha" class="form-control">
+        <input type="password" name="password" placeholder="Senha" class="form-control">
         </div>
         <div class="form-group">
-        <button class="btn btn-block btn-primary">Entrar</button>
+        <button type="submit" class="btn btn-block btn-primary">Entrar</button>
         </div>
         <div class="form-group">
-        <p><a href="#"><i class="fa fa-question"></i> Esqueci minha senha</a></p>
-        <p><a href="#"><i class="fa fa-info-circle"></i> Consultar certificado</a></p>
+        <p><a href="http://ead.iprovida.org.br/login/forgot_password.php" target="_blank"><i class="fa fa-question"></i> Esqueci minha senha</a></p>
+        <p><a href="#" onclick="alert('Em breve!')"><i class="fa fa-info-circle"></i> Consultar certificado</a></p>
         </div>
     </form>
 </div> <!-- #area-aluno -->

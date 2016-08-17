@@ -3,7 +3,8 @@
 <% set active = "index" %>
 
 <% block content %>
-    <div class="container">
+
+    <div class="container" ng-controller="HomeCtrl">
 
       <div class="row">
         <div class="col-lg-9">
@@ -15,7 +16,7 @@
                   <li data-target="#carousel-banners" data-slide-to="2" class="active"></li>
               </ol>-->
               <div class="carousel-inner">
-                  <a href="#" class="item active">
+                  <a href="javascript:void(0);" ng-click="open('lg', 'modal.html')" class="item active">
                     <div class="mascara"></div>
                     <h2>Seja um motorista legal. <br> Faça o curso de Reabilitação. <span>Clique e saiba mais</span></h2>
                     
@@ -41,9 +42,9 @@
             <h2>Inscreva-se</h2>
           </div>
 
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p class="mh200">Inscreva-se em nosso curso e aproveite um ambiente com total liberdade de aprendizado.</p>
 
-          <button class="btn btn-block btn-default btn-yellow">Conheça os cursos</button>
+          <a href="inscreva.html" class="btn btn-block btn-default btn-yellow">Inscreva-se</a>
         </div>
         <div class="col-lg-3">
           <div class="well well-vermelho text-center">
@@ -51,9 +52,9 @@
             <h2>Cursos</h2>
           </div>
 
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p class="mh200">Conheça os cursos desenvolvido especialmente para você.</p>
 
-          <button class="btn btn-block btn-default btn-red">Conheça os cursos</button>
+          <a href="inscreva.html" class="btn btn-block btn-default btn-red">Conheça os cursos</a>
         </div>
         <div class="col-lg-3">
           <div class="well well-verde text-center">
@@ -61,9 +62,9 @@
             <h2>EAD</h2>
           </div>
 
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p class="mh200">Forma de ensino/aprendizagem mediados por tecnologias que permitem que o professor e o aluno estejam em ambientes físicos diferentes.</p>
 
-          <button class="btn btn-block btn-default btn-green">Entenda as regras</button>
+          <a href="inscreva.html" class="btn btn-block btn-default btn-green">Entenda as regras</a>
         </div>
         <div class="col-lg-3">
           <div class="well well-laranja text-center">
@@ -71,9 +72,9 @@
             <h2>Parceria</h2>
           </div>
 
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p class="mh200">Estabelecer uma autentica parceria com os clientes, visando, através de solidas metodologias, técnicas e aperfeiçoamento, assegurar o desenvolvimento e a excelência profissional.</p>
 
-          <button class="btn btn-block btn-default btn-orange">Conheça nossos parceiros</button>
+          <a href="parceria.html" class="btn btn-block btn-default btn-orange">Conheça nossos parceiros</a>
         </div>
       </div> <!-- #chamadas.row -->
 

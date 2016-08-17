@@ -1,0 +1,37 @@
+<!-- parceria.html -->
+<% extends "layout.html" %>
+<% set active = "parceria" %>
+
+<% block content %>
+    <div class="container">
+
+      <div id="institucional" class="row">
+        <div id="miolo" class="col-lg-9">
+          
+          <h1 class="page-title">Parceria</h1>
+
+          <p>
+          O Instituto Pro-Vida conta com alguns parceiros, que contribuem para o 
+          desenvolvimento de projetos e execução do mesmo dentro do estado do Rio de janeiro.</p>
+
+          <a href="http://www.vitrinedomarmore.com.br/" target="_blank" class="col-xs-3">
+            <img src="http://www.vitrinedomarmore.com.br/imagens/logo.jpg" class="img-responsive" alt="">
+          </a>
+
+          <a href="http://www.portalnovacont.com.br/site/#" target="_blank" class="col-xs-3">
+            <img src="http://www.portalnovacont.com.br/site/wp-content/uploads/2015/11/logo_escudo_300x210.png" class="img-responsive" alt="">
+          </a>
+
+          
+        </div>
+        <div class="col-lg-3">
+
+          <% include "partials/area-aluno.html" %>
+          
+        </div>
+      </div>
+
+      <% include "partials/links-uteis.html" %>
+
+    </div> <!-- .container -->
+<% endblock %>

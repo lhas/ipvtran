@@ -1,0 +1,55 @@
+<!-- ead.html -->
+<% extends "layout.html" %>
+<% set active = "ead" %>
+
+<% block content %>
+    <div class="container">
+
+      <div id="institucional" class="row">
+        <div id="miolo" class="col-lg-9">
+          
+          <h1 class="page-title">EAD</h1>
+
+          <p>
+          <b>EaD</b> é a sigla para  <b>Educação a Distância</b>. É uma forma de ensino/aprendizagem 
+          mediados por tecnologias que permitem que o professor e o aluno estejam em ambientes físicos 
+          diferentes.</p>
+
+          <p>
+          EaD possibilita que o aluno crie seu próprio horário para estudar pois geralmente 
+          as aulas são ministradas pela internet, e o aluno apenas comparece a instituição 
+          de ensino para realizar as provas. Nessa modalidade o aluno acompanha a matéria 
+          através de mídias como televisão, vídeo, CD-ROM, telefone celular, iPod, notebook,
+          etc.</p>
+
+          <p>
+          A Educação a Distância foi regulamentada pelo Decreto-Lei nº 2.494, de 10 de 
+          fevereiro de 1998, do Ministério da Educação, regulamentando o Art. 80 da Lei 
+          de Diretrizes e Bases da Educação Nacional. Entre outras disposições, determina 
+          que a educação a distância será oferecida por instituições especificamente 
+          credenciadas pela União. Caberá também à União regulamentar requisitos para 
+          realização de exames e para registro de diplomas relativos ao curso.</p>
+
+          <p>
+          Na educação a distância, o aluno tem a capacidade de gerenciar seu próprio aprendizado, 
+          ele possui uma grande autonomia para estudar e “assistir” as aulas de acordo com 
+          seu tempo disponível.</p>
+
+          <p>
+          A Educação a Distância é uma modalidade de ensino que tem se tornado cada vez mais 
+          comum. São oferecidos cursos de graduação, pós-graduação, cursos técnicos, 
+          profissionalizantes, de aperfeiçoamento etc.</p>
+
+          
+        </div>
+        <div class="col-lg-3">
+
+          <% include "partials/area-aluno.html" %>
+          
+        </div>
+      </div>
+
+      <% include "partials/links-uteis.html" %>
+
+    </div> <!-- .container -->
+<% endblock %>
