@@ -1,47 +1,50 @@
 <!-- institucional.html -->
 <% extends "layout.html" %>
-<% set active = "institucional" %>
+    <% set active = "institucional" %>
 
-<% block content %>
-    <div class="container">
+        <% block content %>
+            <div class="container">
 
-      <div id="institucional" class="row">
-        <div id="miolo" class="col-lg-9">
-          
-          <h1 class="page-title">Institucional</h1>
+                <div id="institucional" class="row">
+                    <div id="miolo" class="col-lg-9">
 
-<p>
-O IPVTrânsito é um projeto do INSTITUTO PRÓ-VIDA, porem com finalidade única e exclusiva voltada para ensino em atividades de transito, reciclagem e conscientização de condutores infratores e motoristas em geral.
-</p>
+                        <h1 class="page-title">Institucional</h1>
 
-<p>
-O INSTITUTO PRÓ-VIDA é uma entidade, sem finalidade lucrativa, com fins exclusivamente assistenciais, científicos, culturais e educacionais, com autonomia patrimonial, administrativa e financeira.
-</p>
+                        <p>
+                            O IPVTrânsito é um projeto do INSTITUTO PRÓ-VIDA, porem com finalidade única e exclusiva voltada para ensino em atividades de transito, reciclagem e conscientização de condutores infratores e motoristas em geral.
+                        </p>
 
-<p>
-O INSTITUTO PRÓ-VIDA observa os princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e da eficiência e não faz qualquer discriminação de raça, cor, gênero ou religião.
-</p>
+                        <p>
+                            O INSTITUTO PRÓ-VIDA é uma entidade, sem finalidade lucrativa, com fins exclusivamente assistenciais, científicos, culturais e educacionais, com autonomia patrimonial, administrativa e financeira.
+                        </p>
 
-<p>
-Reconhecido como UTILIDADE PUBLICA do estado do Rio de janeiro /RJ (DORJ 05/04/2016),  o IPV tem atuação sob 4 pilares:
-</p>
+                        <p>
+                            O INSTITUTO PRÓ-VIDA observa os princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e da eficiência e não faz qualquer discriminação de raça, cor, gênero ou religião.
+                        </p>
 
-<ul>
-<li><p><strong>PLANEJAMENTO:</strong> Desenvolver e executar projetos tendo como objetivo transformar e valorizar a vida, melhorando as relações em sociedade</p></li>
-<li><p><strong>EDUCAÇÃO:</strong> Contribuir para melhoria e qualidade do ensino em todos os níveis, para a formação dos atuais e futuros missionários e auxiliar no processo de melhoria da formação do sentimento de brasilidade.</p></li>
-<li><p><strong>SAÚDE E BEM-ESTAR:</strong> Manter um estado constante de saúde e bem-estar físico, mental e social, desenvolver hábitos adequados no cotidiano, incluindo fatores de atividade física, alimentação e sistema de saúde.</p></li>
-<li><p><strong>MEIO AMBIENTE:</strong> valorizar e garantir a integração das dimensões sociais e ambientais em nossas estratégias, políticas, práticas e procedimentos, incentivando, constantemente a adoção de práticas sustentáveis</p></li>
-</ul>
+                        <p style="font-weight: bold;">
+                            Reconhecido como UTILIDADE PÚBLICA do estado do Rio de janeiro /RJ (DORJ 05/04/2016), o IPV tem atuação <br> sob 4 pilares:
+                        </p>
 
-        </div>
-        <div class="col-lg-3">
+                        <p><strong>PLANEJAMENTO:</strong> Desenvolver e executar projetos tendo como objetivo transformar e valorizar a vida, melhorando as relações em sociedade</p>
 
-          <% include "partials/area-aluno.html" %>
-          
-        </div>
-      </div>
+                        <p><strong>EDUCAÇÃO:</strong> Contribuir para melhoria e qualidade do ensino em todos os níveis, para a formação dos atuais e futuros missionários e auxiliar no processo de melhoria da formação do sentimento de brasilidade.</p>
 
-      <% include "partials/links-uteis.html" %>
+                        <p><strong>SAÚDE E BEM-ESTAR:</strong> Manter um estado constante de saúde e bem-estar físico, mental e social, desenvolver hábitos adequados no cotidiano, incluindo fatores de atividade física, alimentação e sistema de saúde.</p>
 
-    </div> <!-- .container -->
-<% endblock %>
+                        <p><strong>MEIO AMBIENTE:</strong> valorizar e garantir a integração das dimensões sociais e ambientais em nossas estratégias, políticas, práticas e procedimentos, incentivando, constantemente a adoção de práticas sustentáveis</p>
+
+
+                    </div>
+                    <div class="col-lg-3">
+
+                        <% include "partials/area-aluno.html" %>
+
+                    </div>
+                </div>
+
+                <% include "partials/links-uteis.html" %>
+
+            </div>
+            <!-- .container -->
+            <% endblock %>

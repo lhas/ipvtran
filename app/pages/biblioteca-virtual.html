@@ -1,0 +1,27 @@
+<!-- ead.html -->
+<% extends "layout.html" %>
+    <% set active = "ead" %>
+
+        <% block content %>
+            <div class="container">
+
+                <div id="institucional" class="row">
+                    <div id="miolo" class="col-lg-9">
+
+                        <h1 class="page-title">Biblioteca Virtual</h1>
+
+                        <p>DETRAN RJ: <a target="_blank" href="http://www.detran.rj.gov.br">www.detran.rj.gov.br</a></p>
+                        <p>DENATRAN: <a target="_blank" href="http://www.denatran.gov.br">www.denatran.gov.br</a></p>
+                    </div>
+                    <div class="col-lg-3">
+
+                        <% include "partials/area-aluno.html" %>
+
+                    </div>
+                </div>
+
+                <% include "partials/links-uteis.html" %>
+
+            </div>
+            <!-- .container -->
+            <% endblock %>

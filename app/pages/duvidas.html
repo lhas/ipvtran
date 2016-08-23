@@ -1,64 +1,81 @@
 <!-- duvidas.html -->
 <% extends "layout.html" %>
-<% set active = "duvidas" %>
+    <% set active = "duvidas" %>
 
-<% block content %>
-    <div class="container">
+        <% block content %>
+            <div class="container">
 
-      <div id="institucional" class="row">
-        <div id="miolo" class="col-lg-9">
-          
-          <h1 class="page-title">Dúvidas</h1>
+                <div id="institucional" class="row">
+                    <div id="miolo" class="col-lg-9">
 
-          <p>
-          EAD é a sigla para  Educação a Distância. É uma forma de ensino/aprendizagem mediados por tecnologias que permitem que o professor e o aluno estejam em ambientes físicos diferentes. Possibilita que o aluno crie seu próprio horário para estudar pois geralmente as aulas são ministradas pela internet, e o aluno apenas comparece a instituição de ensino para realizar as provas. Nessa modalidade o aluno acompanha a matéria através de mídias como televisão, vídeo, CD-ROM, telefone celular, iPod, notebook  etc.
-          </p>
-          <p>
-          <h3 style="font-weight: bold;">Perguntas Frequentes:</h3>
-          </p>
-          <h4 style="font-weight: bold;">Quem é o IPV Trânsito ?</h4>
-          <p>
-          É um projeto do Instituto Pró-Vida, instituição sem fins lucrativos que tem o reconhecimento de sua atividade pelo Estado do Rio de Janeiro. DORJ05/04/16.
-          </p>
-          <h4 style="font-weight: bold;">Como funciona o estudo do curso de Reciclagem EAD?</h4>
-          <p>
-          É um curso totalmente a distância. Você irá precisar de um acesso à internet e com isso poderá estudar usando um computador, tablete, notebook ou mesmo um smartphone. 
-          </p>
-          <h4 style="font-weight: bold;">O curso é realizado a distância ou há alguma atividade presencial?</h4>
-          <p>
-          O curso de Reciclagem é realizado em sua integralidade na modalidade a Distância (EAD) por meio de internet e computador.
-          </p>
-          <h4 style="font-weight: bold;">Qual o Conteúdo do Curso de reciclagem?</h4>
-          <p>
-          Conforme determinação do Denatran, o curso é dividido em 4 Módulos a saber: Direção Defensiva (8hs), Noções de Primeiro socorros (4hs), Legislação de transito (12hs), Relacionamento Interpessoal (6hs).
-          </p>
-          <h4 style="font-weight: bold;">Serei avaliado ao fazer o curso?</h4>
-          <p>
-          Sim. Ao fim de cada modulo será realizado uma avaliação do conteúdo aprendido, onde para passar ao modulo seguinte será necessário obter nota Igual ou superior a 7,0. Após conclusão dos 4(quatros) módulos será feita uma avaliação Final de todo o conteúdo onde o aproveitamento, para aprovação, deverá ser superior a 7,0.
-          </p>
-          <h4 style="font-weight: bold;">Como posso tirar minhas dúvidas?</h4>
-          <p>
-          Você terá 45 dias para concluir o curso. Durante esse período haverá um monitor e tutor acompanhando a evolução dos seus estudos, estando a sua disposição para auxiliá-lo em seu acesso ao sistema e dúvidas em relação ao conteúdo.
-          Além disso disponibilizamos o telefone 213012-2707 e o email.: ead@ipvtransito.com.br
-          </p>
+                        <h1 class="page-title">Dúvidas</h1>
 
-          <h4 style="font-weight: bold;">Qual o valor Curso?</h4>
-          <p>
-          Para o pagamento a Vista o valor é R$ 270,00. O valor poderá ser parcelado em até 2x sem juros e 5x com juros (conforme condições da operadora do sistema).
-          </p>
-          <h4 style="font-weight: bold;">Não recebi meu usuário e senha?</h4>
-          <p>
-          Após a confirmação de pagamento você automaticamente recebe um e-mail com seu usuário e senha para acesso ao sistema, caso não tenha recebido entre em contato com IPV transito ead@ipvtransito.com.br e 2130122707 e solicite o seu acesso.
-          </p>
-        </div>
-        <div class="col-lg-3">
+                        <p>
+                            EAD é a sigla para Educação a Distância. É uma forma de ensino/aprendizagem mediados por tecnologias que permitem que o professor e o aluno estejam em ambientes físicos diferentes. Possibilita que o aluno crie seu próprio horário para estudar pois geralmente
+                            as aulas são ministradas pela internet, e o aluno apenas comparece a instituição de ensino para realizar as provas. Nessa modalidade o aluno acompanha a matéria através de mídias como televisão, vídeo, CD-ROM, telefone celular,
+                            iPod, notebook etc.
+                        </p>
 
-          <% include "partials/area-aluno.html" %>
-          
-        </div>
-      </div>
+                        <p>
+                            <h3 style="font-weight: bold;">Perguntas Frequentes:</h3>
+                        </p>
 
-      <% include "partials/links-uteis.html" %>
+                        <uib-accordion close-others="true">
+                            <div uib-accordion-group class="panel-default" heading="Quem é o IPV Trânsito ?" is-open="true">
+                                <p>
+                                    É um projeto do Instituto Pró-Vida, instituição sem fins lucrativos que tem o reconhecimento de sua atividade pelo Estado do Rio de Janeiro. DORJ05/04/16.
+                                </p>
+                            </div>
+                            <div uib-accordion-group class="panel-default" heading="Como funciona o estudo do curso de Reciclagem EAD?">
+                                <p>
+                                    É um curso totalmente a distância. Você irá precisar de um acesso à internet e com isso poderá estudar usando um computador, tablete, notebook ou mesmo um smartphone.
+                                </p>
+                            </div>
+                            <div uib-accordion-group class="panel-default" heading="O curso é realizado a distância ou há alguma atividade presencial?">
+                                <p>
+                                    O curso de Reciclagem é realizado em sua integralidade na modalidade a Distância (EAD) por meio de internet e computador.
+                                </p>
+                            </div>
+                            <div uib-accordion-group class="panel-default" heading="Qual o Conteúdo do Curso de reciclagem?">
+                                <p>
+                                    Conforme determinação do Denatran, o curso é dividido em 4 Módulos a saber: Direção Defensiva (8hs), Noções de Primeiro socorros (4hs), Legislação de transito (12hs), Relacionamento Interpessoal (6hs).
+                                </p>
+                            </div>
+                            <div uib-accordion-group class="panel-default" heading="Serei avaliado ao fazer o curso?">
+                                <p>
+                                    Sim. Ao fim de cada modulo será realizado uma avaliação do conteúdo aprendido, onde para passar ao modulo seguinte será necessário obter nota Igual ou superior a 7,0. Após conclusão dos 4(quatros) módulos será feita uma avaliação Final de todo o conteúdo
+                                    onde o aproveitamento, para aprovação, deverá ser superior a 7,0.
+                                </p>
+                            </div>
+                            <div uib-accordion-group class="panel-default" heading="Como posso tirar minhas dúvidas?">
+                                <p>
+                                    Você terá 45 dias para concluir o curso. Durante esse período haverá um monitor e tutor acompanhando a evolução dos seus estudos, estando a sua disposição para auxiliá-lo em seu acesso ao sistema e dúvidas em relação ao conteúdo. Além disso disponibilizamos
+                                    o telefone 213012-2707 e o email.: ead@ipvtransito.com.br
+                                </p>
+                            </div>
+                            <div uib-accordion-group class="panel-default" heading="Qual o valor Curso?">
+                                <p>
+                                    Para o pagamento a Vista o valor é R$ 270,00. O valor poderá ser parcelado em até 2x sem juros e 5x com juros (conforme condições da operadora do sistema).
+                                </p>
+                            </div>
+                            <div uib-accordion-group class="panel-default" heading="Não recebi meu usuário e senha?">
 
-    </div> <!-- .container -->
-<% endblock %>
+                                <p>
+                                    Após a confirmação de pagamento você automaticamente recebe um e-mail com seu usuário e senha para acesso ao sistema, caso não tenha recebido entre em contato com IPV transito ead@ipvtransito.com.br e 2130122707 e solicite o seu acesso.
+                                </p>
+                            </div>
+                        </uib-accordion>
+                        
+                    </div>
+                    <div class="col-lg-3">
+
+                        <% include "partials/area-aluno.html" %>
+
+                    </div>
+                </div>
+
+                <% include "partials/links-uteis.html" %>
+
+            </div>
+            <!-- .container -->
+            <% endblock %>

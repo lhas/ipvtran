@@ -1,120 +1,120 @@
 <!-- contato.html -->
 <% extends "layout.html" %>
-<% set active = "contato" %>
+    <% set active = "contato" %>
 
-<% block content %>
-    
-    <div class="container">
+        <% block content %>
 
-      <div id="institucional" ng-controller="ContatoCtrl" class="row">
-        <div id="miolo" class="col-lg-9">
-          
-          <h1 class="page-title">Contato</h1>
+            <div class="container">
 
-          <script type="text/ng-template" id="alert.html">
-            <div ng-transclude></div>
-          </script>
+                <div id="institucional" ng-controller="ContatoCtrl" class="row">
+                    <div id="miolo" class="col-lg-9">
 
-          <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" ng-bind="alert.msg"></div>
+                        <h1 class="page-title">Contato</h1>
 
-          <div id="contato" class="row">
-            <div class="col-lg-8">
+                        <script type="text/ng-template" id="alert.html">
+                            <div ng-transclude></div>
+                        </script>
 
-              <form name="contactForm" ng-submit="submitForm(contact)" novalidate>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="form-group" ng-class="{ 'has-error' : contactForm.name.$invalid && !contactForm.name.$pristine }">
-                      <label>Nome:</label>
-                      <input type="text" name="name" class="form-control" class="form-control" ng-model="contact.nome" required>
+                        <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" ng-bind="alert.msg"></div>
 
-                      <p ng-show="contactForm.name.$invalid && !contactForm.name.$pristine" class="help-block">Nome é obrigatório.</p>
-                    </div>
-                    <div class="form-group" ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
-                      <label>E-mail:</label>
-                      <input type="email" name="email" class="form-control" ng-model="contact.email" required>
+                        <div id="contato" class="row">
+                            <div class="col-lg-8">
 
-                      <p ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="help-block">E-mail está inválido.</p>
-                    </div>
-                    <div class="form-group" ng-class="{ 'has-error' : contactForm.phone.$invalid && !contactForm.phone.$pristine }">
-                      <label>Telefone (com DDD):</label>
-                      <input type="text" name="phone" ng-model="contact.phone" ui-mask="(99) 9999-9999?9" required minlength="8" class="form-control">
-                    
-                      <p ng-show="contactForm.phone.$invalid && !contactForm.phone.$pristine" class="help-block">Telefone está inválido.</p>
-                    
-                    </div>
-                    <div class="form-group" ng-class="{ 'has-error' : contactForm.motivo.$invalid && !contactForm.motivo.$pristine }">
-                      <label>Motivo do Contato:</label>
-                      <select name="motivo" ng-model="contact.motivo" required class="form-control">
+                                <form name="contactForm" ng-submit="submitForm(contact)" novalidate>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group" ng-class="{ 'has-error' : contactForm.name.$invalid && !contactForm.name.$pristine }">
+                                                <label>Nome:</label>
+                                                <input type="text" name="name" class="form-control" class="form-control" ng-model="contact.nome" required>
+
+                                                <p ng-show="contactForm.name.$invalid && !contactForm.name.$pristine" class="help-block">Nome é obrigatório.</p>
+                                            </div>
+                                            <div class="form-group" ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
+                                                <label>E-mail:</label>
+                                                <input type="email" name="email" class="form-control" ng-model="contact.email" required>
+
+                                                <p ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="help-block">E-mail está inválido.</p>
+                                            </div>
+                                            <div class="form-group" ng-class="{ 'has-error' : contactForm.phone.$invalid && !contactForm.phone.$pristine }">
+                                                <label>Telefone (com DDD):</label>
+                                                <input type="text" name="phone" ng-model="contact.phone" ui-mask="(99) 9999-9999?9" required minlength="8" class="form-control">
+
+                                                <p ng-show="contactForm.phone.$invalid && !contactForm.phone.$pristine" class="help-block">Telefone está inválido.</p>
+
+                                            </div>
+                                            <div class="form-group" ng-class="{ 'has-error' : contactForm.motivo.$invalid && !contactForm.motivo.$pristine }">
+                                                <label>Motivo do Contato:</label>
+                                                <select name="motivo" ng-model="contact.motivo" required class="form-control">
                         <option value="">Selecionar</option>
                         <option value="exemplo">Exemplo</option>
                       </select>
-                      
-                      <p ng-show="contactForm.motivo.$invalid && !contactForm.motivo.$pristine" class="help-block">Selecione um motivo.</p>
-                    
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group" ng-class="{ 'has-error' : contactForm.message.$invalid && !contactForm.message.$pristine }">
-                      <label>Mensagem:</label>
-                      <textarea ng-model="contact.message" name="message" required rows="10" class="form-control"></textarea>
-                      
-                      <p ng-show="contactForm.message.$invalid && !contactForm.message.$pristine" class="help-block">Mensagem é obrigatória.</p>
-                    </div>
 
-                    <div class="form-group">
-                      <button class="btn btn-primary btn-block" ng-disabled="contactForm.$invalid">Enviar</button>
+                                                <p ng-show="contactForm.motivo.$invalid && !contactForm.motivo.$pristine" class="help-block">Selecione um motivo.</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group" ng-class="{ 'has-error' : contactForm.message.$invalid && !contactForm.message.$pristine }">
+                                                <label>Mensagem:</label>
+                                                <textarea ng-model="contact.message" name="message" required rows="10" class="form-control"></textarea>
+
+                                                <p ng-show="contactForm.message.$invalid && !contactForm.message.$pristine" class="help-block">Mensagem é obrigatória.</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <button class="btn btn-primary btn-block" ng-disabled="contactForm.$invalid">Enviar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="lateral" class="col-lg-4">
+
+
+                                <div class="row">
+                                    <div class="col-xs-1">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <p>
+                                            Avenida Crisóstomo Pimentel de Oliveira, 2025 - sl 204 <br> Anchieta - Rio de Janeiro/RJ CEP:21645-521
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-1">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <p>
+                                            (21) 3012-2707
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-1">
+                                        <i class="fa fa-at"></i>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <p>
+                                            contato@iprovida.org.br
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
-                  </div>
+                    <div class="col-lg-3">
+
+                        <% include "partials/area-aluno.html" %>
+
+                    </div>
                 </div>
-              </form>
+
             </div>
-            <div id="lateral" class="col-lg-4">
-
-
-              <div class="row">
-                <div class="col-xs-1">
-                  <i class="fa fa-map-marker"></i>
-                </div>
-                <div class="col-xs-9">
-                  <p>
-                    Avenida Crisóstomo Pimentel de Oliveira, 2025 - sl 204 <br>
-                    Anchieta - Rio de Janeiro/RJ  CEP:21645-521 
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-1">
-                  <i class="fa fa-phone"></i> 
-                </div>
-                <div class="col-xs-9">
-                  <p>
-                    (21) 3012-2707
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-1">
-                  <i class="fa fa-at"></i> 
-                </div>
-                <div class="col-xs-9">
-                  <p>
-                    ead@ipvtransito.com.br
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          
-        </div>
-        <div class="col-lg-3">
-
-          <% include "partials/area-aluno.html" %>
-          
-        </div>
-      </div>
-
-    </div> <!-- .container -->
-<% endblock %>
+            <!-- .container -->
+            <% endblock %>
