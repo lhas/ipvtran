@@ -9,9 +9,25 @@ use App\Candidate;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Session;
+use Excel;
 
 class CandidatesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['api'] ]);
+    }
+
+    public function api(Request $request)
+    {
+
+        $user = $request->get('user');
+
+        $email = Candidate::create($user);
+
+        return Candidate::findOrFail($email->id);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -149,5 +165,24 @@ class CandidatesController extends Controller
         $pathToFile = 'uploads/' . $candidate->certification_attachment;
 
         return response()->download($pathToFile);
+    }
+
+    public function export()
+    {
+        $candidates = Candidate::all();
+
+        $data = $candidates->toArray(); 
+
+        $tmp = Excel::create('IPVtran_Exportacao_Candidatos', function($excel) use ($data) {
+            $excel->sheet('Sheetname', function($sheet) use ($data) {
+
+            // Sheet manipulation
+            $sheet->fromArray($data);
+
+            });
+
+        });
+
+        $tmp->download('xls');
     }
 }

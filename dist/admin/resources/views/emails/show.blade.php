@@ -3,17 +3,17 @@
 @section('content')
 <div class="container">
 
-    <h1>%%modelName%% {{ $%%crudNameSingular%%->%%primaryKey%% }}
-        <a href="{{ url('%%routeGroup%%%%viewName%%/' . $%%crudNameSingular%%->%%primaryKey%% . '/edit') }}" class="btn btn-primary btn-xs" title="Edit %%modelName%%"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+    <h1>Email {{ $email->id }}
+        <a href="{{ url('emails/' . $email->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit Email"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
         {!! Form::open([
             'method'=>'DELETE',
-            'url' => ['%%routeGroup%%%%crudName%%', $%%crudNameSingular%%->%%primaryKey%%],
+            'url' => ['emails', $email->id],
             'style' => 'display:inline'
         ]) !!}
             {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true"/>', array(
                     'type' => 'submit',
                     'class' => 'btn btn-danger btn-xs',
-                    'title' => 'Delete %%modelName%%',
+                    'title' => 'Delete Email',
                     'onclick'=>'return confirm("Confirm delete?")'
             ));!!}
         {!! Form::close() !!}
@@ -22,9 +22,9 @@
         <table class="table table-bordered table-striped table-hover">
             <tbody>
                 <tr>
-                    <th>ID</th><td>{{ $%%crudNameSingular%%->%%primaryKey%% }}</td>
+                    <th>ID</th><td>{{ $email->id }}</td>
                 </tr>
-                %%formBodyHtmlForShowView%%
+                <tr><th> Name </th><td> {{ $email->name }} </td></tr><tr><th> Email </th><td> {{ $email->email }} </td></tr>
             </tbody>
         </table>
     </div>

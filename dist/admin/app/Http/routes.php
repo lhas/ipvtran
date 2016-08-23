@@ -19,5 +19,11 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('candidates/export', 'CandidatesController@export');
+Route::post('candidates/api', 'CandidatesController@api');
 Route::get('candidates/{id}/download', 'CandidatesController@download');
 Route::resource('candidates', 'CandidatesController');
+
+Route::get('emails/export', 'EmailsController@export');
+Route::post('emails/api', 'EmailsController@api');
+Route::resource('emails', 'EmailsController');

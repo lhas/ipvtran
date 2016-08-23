@@ -46,7 +46,7 @@
                     @if (!Auth::guest())
                     <li><a href="{{ url('/home') }}"><i class="fa fa-home"></i> Home</a></li>
                     <li><a href="{{ url('/candidates') }}"><i class="fa fa-user"></i>  Candidatos</a></li>
-                    <li><a href="{{ url('/email') }}"><i class="fa fa-envelope-o"></i> Newsletter</a></li>
+                    <li><a href="{{ url('/emails') }}"><i class="fa fa-envelope-o"></i> Newsletter</a></li>
                     @endif
                 </ul>
 

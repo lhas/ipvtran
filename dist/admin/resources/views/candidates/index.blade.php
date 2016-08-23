@@ -3,7 +3,10 @@
 @section('content')
 <div class="container">
 
-    <h1 class="pull-left"><i class="fa fa-users"></i> Candidatos <a href="{{ url('/candidates/create') }}" class="btn btn-primary btn-xs" title="Add New Candidate"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a></h1>
+    <h1 class="pull-left"><i class="fa fa-users"></i> Candidatos 
+    <a href="{{ url('/candidates/create') }}" class="btn btn-primary btn-xs" title="Add New Candidate"><span class="glyphicon glyphicon-plus" aria-hidden="true"/> Adicionar Novo</a>
+    <a href="{{ url('/candidates/export') }}" class="btn btn-success btn-xs" title="Exportar Candidatos para Planilha Excel"> <i class="fa fa-file-excel-o" aria-hidden="true"></i> Exportar </a>
+    </h1>
     
     <form class="form-inline pull-right" style="margin-top: 30px; margin-bottom: 20px;">
   <div class="form-group">
