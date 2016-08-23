@@ -8,13 +8,14 @@
     {!! Form::model($candidate, [
         'method' => 'PATCH',
         'url' => ['/candidates', $candidate->id],
-        'class' => 'form-horizontal'
+        'class' => 'form-horizontal',
+        'files' => true
     ]) !!}
 
-                <div class="form-group {{ $errors->has('certification_attachment') ? 'has-error' : ''}}">
+            <div class="form-group {{ $errors->has('certification_attachment') ? 'has-error' : ''}}">
                 {!! Form::label('certification_attachment', 'Certification Attachment', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::text('certification_attachment', null, ['class' => 'form-control']) !!}
+                    {!! Form::file('certification_attachment', null, ['class' => 'form-control']) !!}
                     {!! $errors->first('certification_attachment', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>

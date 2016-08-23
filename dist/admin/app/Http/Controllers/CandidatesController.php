@@ -47,7 +47,20 @@ class CandidatesController extends Controller
     public function store(Request $request)
     {
         
-        Candidate::create($request->all());
+        $candidate = Candidate::create($request->all());
+
+        $file = $request->file('certification_attachment');
+
+        if($request->hasFile('certification_attachment') && $file->isValid()) {
+            $original_name = $file->getClientOriginalName();
+            $new_filename = uniqid('certificado_', true) . '.' . $file->getClientOriginalExtension();
+
+            $file->move('uploads', $new_filename);
+
+            $candidate->update([
+                'certification_attachment' => $new_filename
+            ]);
+        }
 
         Session::flash('flash_message', 'Candidate added!');
 
@@ -94,6 +107,19 @@ class CandidatesController extends Controller
         
         $candidate = Candidate::findOrFail($id);
         $candidate->update($request->all());
+        
+        $file = $request->file('certification_attachment');
+
+        if($request->hasFile('certification_attachment') && $file->isValid()) {
+            $original_name = $file->getClientOriginalName();
+            $new_filename = uniqid('certificado_', true) . '.' . $file->getClientOriginalExtension();
+
+            $file->move('uploads', $new_filename);
+
+            $candidate->update([
+                'certification_attachment' => $new_filename
+            ]);
+        }
 
         Session::flash('flash_message', 'Candidate updated!');
 
@@ -114,5 +140,14 @@ class CandidatesController extends Controller
         Session::flash('flash_message', 'Candidate deleted!');
 
         return redirect('candidates');
+    }
+
+    public function download($id)
+    {
+        $candidate = Candidate::findOrFail($id);
+        
+        $pathToFile = 'uploads/' . $candidate->certification_attachment;
+
+        return response()->download($pathToFile);
     }
 }

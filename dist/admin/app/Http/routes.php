@@ -19,4 +19,5 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('candidates/{id}/download', 'CandidatesController@download');
 Route::resource('candidates', 'CandidatesController');

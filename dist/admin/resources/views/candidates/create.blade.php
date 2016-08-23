@@ -6,12 +6,12 @@
     <h1>Create New Candidate</h1>
     <hr/>
 
-    {!! Form::open(['url' => '/candidates', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['url' => '/candidates', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-                <div class="form-group {{ $errors->has('certification_attachment') ? 'has-error' : ''}}">
+            <div class="form-group {{ $errors->has('certification_attachment') ? 'has-error' : ''}}">
                 {!! Form::label('certification_attachment', 'Certification Attachment', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::text('certification_attachment', null, ['class' => 'form-control']) !!}
+                    {!! Form::file('certification_attachment', null, ['class' => 'form-control']) !!}
                     {!! $errors->first('certification_attachment', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>

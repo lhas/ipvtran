@@ -53,6 +53,7 @@
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->cpf }}</td>
                     <td>
+                        <a href="{{ url('/candidates/' . $item->id . '/download') }}" class="btn btn-success btn-xs" title="Download Certificado"> <i class="fa fa-download"></i> </a>
                         <a href="{{ url('/candidates/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit Candidate"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
                         {!! Form::open([
                             'method'=>'DELETE',
