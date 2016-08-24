@@ -5,9 +5,9 @@ angular.module('ipvtran', [
   'ipvtran.config'
 ]);
 
-angular.module('ipvtran').config(['$compileProvider', '$sceProvider', function ($compileProvider, $sceProvider) {
-    $compileProvider.debugInfoEnabled(false);
-    $sceProvider.enabled(false);
+angular.module('ipvtran').config(['$compileProvider', '$sceProvider', function($compileProvider, $sceProvider) {
+  $compileProvider.debugInfoEnabled(false);
+  $sceProvider.enabled(false);
 }]);
 
 // directives.js
@@ -19,21 +19,50 @@ angular.module('ipvtran').controller('HomeCtrl', HomeCtrl);
 angular.module('ipvtran').controller('ContatoCtrl', ContatoCtrl);
 angular.module('ipvtran').controller('InscricaoCtrl', InscricaoCtrl);
 angular.module('ipvtran').controller('ModalInstanceCtrl', ModalInstanceCtrl);
+angular.module('ipvtran').controller('CertificadoCtrl', CertificadoCtrl);
 
+CertificadoCtrl.$inject = ['$scope', '$http', 'apiURL'];
 ModalInstanceCtrl.$inject = ['$scope', '$uibModalInstance'];
 HomeCtrl.$inject = ['$scope', '$http', 'apiURL', '$uibModal'];
 ContatoCtrl.$inject = ['$scope', '$http', 'apiURL'];
 InscricaoCtrl.$inject = ['$scope', '$http', 'apiURL'];
 
+function CertificadoCtrl($scope, $http, apiURL) {
+  $scope.alerts = [];
+
+  $scope.submit = function(record) {
+
+    // waiting alert
+    $scope.alerts.push({ type: 'warning', msg: 'Enviando...' });
+
+    // AJAX
+    $http.post(apiURL + 'records/send', record).then(function(result) {
+      $scope.record = result.data;
+
+      // reset model
+      $scope.inscricao = { concluido: true };
+
+      $scope.alerts.push({ type: 'success', msg: 'Sua inscrição foi identificada com sucesso! Verifique os dados abaixo:' });
+    }).catch(function(error) {
+      console.log(error);
+      $scope.alerts.push({ type: 'danger', msg: 'Ocorreu um problema na consulta. Entre em contato com o Instituto.' });
+    });
+
+    // reset form
+    $scope.consultaForm.$setPristine();
+  }
+
+}
+
 function ModalInstanceCtrl($scope, $uibModalInstance) {
-  $scope.cancel = function () {
+  $scope.cancel = function() {
     $uibModalInstance.dismiss('cancel');
   };
 };
 
 function HomeCtrl($scope, $http, apiURL, $uibModal) {
 
-  $scope.open = function (size, template) {
+  $scope.open = function(size, template) {
 
     var modalInstance = $uibModal.open({
       animation: true,
@@ -52,18 +81,18 @@ function InscricaoCtrl($scope, $http, apiURL) {
   $scope.submitForm = function(record) {
 
     // waiting alert
-    $scope.alerts.push({type: 'warning', msg: 'Enviando...'});
+    $scope.alerts.push({ type: 'warning', msg: 'Enviando...' });
 
     // AJAX
     $http.post(apiURL + 'records/send', record).then(function(result) {
       $scope.record = result.data;
 
       // reset model
-      $scope.inscricao = {concluido: true};
+      $scope.inscricao = { concluido: true };
 
-      $scope.alerts.push({type: 'success', msg: 'Inscrição Aprovada! Efetue o pagamento no PayPal.'});
+      $scope.alerts.push({ type: 'success', msg: 'Inscrição Aprovada! Efetue o pagamento no PayPal.' });
     }).catch(function(error) {
-      $scope.alerts.push({type: 'danger', msg: error});
+      $scope.alerts.push({ type: 'danger', msg: error });
     });
 
     // reset form
@@ -77,14 +106,14 @@ function ContatoCtrl($scope, $http, apiURL) {
   $scope.submitForm = function(contact) {
 
     // waiting alert
-    $scope.alerts.push({type: 'warning', msg: 'Enviando...'});
-    
+    $scope.alerts.push({ type: 'warning', msg: 'Enviando...' });
+
     $http.post(apiURL + 'send', contact).then(function(result) {
-      $scope.alerts.push({type: 'success', msg: 'Seu contato foi enviado com sucesso!'});
+      $scope.alerts.push({ type: 'success', msg: 'Seu contato foi enviado com sucesso!' });
     }).catch(function(error) {
-      $scope.alerts.push({type: 'danger', msg: 'Ocorreu um problema ao enviar o seu contato. Tente novamente mais tarde.'});
+      $scope.alerts.push({ type: 'danger', msg: 'Ocorreu um problema ao enviar o seu contato. Tente novamente mais tarde.' });
     });
-  
+
     // reset form and model
     $scope.contact = {};
     $scope.contactForm.$setPristine();

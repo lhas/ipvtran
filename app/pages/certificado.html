@@ -1,0 +1,42 @@
+<!-- ead.html -->
+<% extends "layout.html" %>
+  <% set active = "ead" %>
+
+    <% block content %>
+      <div class="container" ng-controller="CertificadoCtrl">
+
+        <div id="institucional" class="row">
+          <div id="miolo" class="col-lg-9">
+
+            <h1 class="page-title">Consultar Certificado</h1>
+
+            <script type="text/ng-template" id="alert.html">
+              <div ng-transclude></div>
+            </script>
+
+            <form name="consultaForm" ng-submit="submit(consulta)" novalidate method="POST">
+              <legend>Consulta por CPF</legend>
+
+              <div class="form-group">
+                <label for="">CPF</label>
+                <input type="text" name="cpf" ng-model="consulta.cpf" ui-mask="999.999.999-99" required minlength="11" class="form-control">
+              </div>
+
+              <button type="submit" ng-disabled="consultaForm.$invalid" class="btn btn-success btn-consultar-certificado"><i class="fa fa-send"></i> Consultar Certificado</button>
+            </form>
+            
+            <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" ng-bind="alert.msg"></div>
+
+          </div>
+          <div class="col-lg-3">
+
+            <% include "partials/area-aluno.html" %>
+
+          </div>
+        </div>
+
+        <% include "partials/links-uteis.html" %>
+
+      </div>
+      <!-- .container -->
+      <% endblock %>

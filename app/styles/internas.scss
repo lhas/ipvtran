@@ -1,138 +1,156 @@
 #institucional {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .panel-heading[aria-selected="true"] h4 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .panel-heading h4 {
-    a {
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 }
 
 .page-title {
-    font-weight: bold;
-    font-family: 'Lato';
-    font-size: 26px;
-    color: #016fa8;
-    margin-top: 0px;
-    margin-bottom: 50px;
+  font-weight: bold;
+  font-family: 'Lato';
+  font-size: 26px;
+  color: #016fa8;
+  margin-top: 0px;
+  margin-bottom: 50px;
 }
 
 h3 {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #miolo,
 .miolo {
-    #grade {
-        font-family: 'Lato';
-        font-weight: bold;
-        font-size: 24px;
-        color: #595959;
-        margin-top: 0px;
-        margin-bottom: 20px;
+  #grade {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 24px;
+    color: #595959;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  #siga {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 18px;
+    color: #595959;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  #prazo {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #595959;
+  }
+  .well {
+    color: #222;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    h2 {
+      font-size: 20px;
     }
-    #siga {
-        font-family: 'Lato';
-        font-weight: bold;
-        font-size: 18px;
-        color: #595959;
-        margin-top: 10px;
-        margin-bottom: 30px;
-    }
-    #prazo {
-        font-family: 'Lato';
-        font-weight: bold;
-        font-size: 20px;
-        margin-bottom: 20px;
-        color: #595959;
-    }
-    .well {
-        color: #222;
-        box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.2);
-        margin-bottom: 30px;
-        h2 {
-            font-size: 20px;
-        }
-    }
-    p {
-        font-family: 'Lato';
-        font-size: 16px;
-        line-height: 26px;
-        margin-bottom: 40px;
-        color: #595959;
-    }
-    .grade-a {
-        font-size: 18px !important;
-        margin-top: 20px !important;
-    }
+  }
+  p {
+    font-family: 'Lato';
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 40px;
+    color: #595959;
+  }
+  .grade-a {
+    font-size: 18px !important;
+    margin-top: 20px !important;
+  }
 }
 
 #contato {
-    label {
-        font-weight: normal;
-        font-family: 'Open Sans';
-        font-size: 14px;
+  label {
+    font-weight: normal;
+    font-family: 'Open Sans';
+    font-size: 14px;
+  }
+  textarea {
+    height: 204px;
+    resize: none;
+  }
+  button {
+    border-radius: 0px;
+    background: #026fa7;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  #lateral {
+    display: inline-block;
+    margin-top: 24px;
+    i {
+      font-size: 18px;
+      color: #363636;
     }
-    textarea {
-        height: 204px;
-        resize: none;
+    p {
+      font-size: 14px;
+      line-height: 20px;
+      font-family: 'Lato';
+      margin-bottom: 10px;
     }
-    button {
-        border-radius: 0px;
-        background: #026fa7;
-        font-family: 'Open Sans';
-        font-size: 14px;
-        font-weight: bold;
-        letter-spacing: 1px;
-    }
-    #lateral {
-        display: inline-block;
-        margin-top: 24px;
-        i {
-            font-size: 18px;
-            color: #363636;
-        }
-        p {
-            font-size: 14px;
-            line-height: 20px;
-            font-family: 'Lato';
-            margin-bottom: 10px;
-        }
-    }
+  }
 }
 
 #dados-inscricao {
-    small {
-        display: block;
-        font-size: 10px;
-    }
-    p {
-        font-family: 'Lato';
-        font-size: 18px;
-        color: #595959;
-        margin-bottom: 30px;
-    }
-    label {
-        font-family: 'Lato';
-        font-size: 18px;
-        color: #595959;
-        font-weight: normal;
-        margin-bottom: 10px;
-    }
-    button {
-        border-radius: 0px;
-        border: none;
-        font-family: 'Lato';
-        font-size: 20px;
-        height: 88px;
-        line-height: 88px;
-        padding: 0px;
-    }
-    .form-group {
-        margin-bottom: 30px;
-    }
+  small {
+    display: block;
+    font-size: 10px;
+  }
+  p {
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #595959;
+    margin-bottom: 30px;
+  }
+  label {
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #595959;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+  button {
+    border-radius: 0px;
+    border: none;
+    font-family: 'Lato';
+    font-size: 20px;
+    height: 88px;
+    line-height: 88px;
+    padding: 0px;
+  }
+  .form-group {
+    margin-bottom: 30px;
+  }
+}
+
+.btn-consultar-certificado {
+  border: none;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 40px;
+  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0,0,0,.2);
+  border-radius: 7px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+  i {
+    font-size: 24px;
+    margin-right: 10px;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+  }
 }
