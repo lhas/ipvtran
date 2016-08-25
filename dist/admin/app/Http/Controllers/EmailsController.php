@@ -10,23 +10,42 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Session;
 use Excel;
+use Mail;
 
 class EmailsController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['api'] ]);
+        $this->middleware('auth', ['except' => ['api', 'api_contact'] ]);
     }
 
     public function api(Request $request)
     {
+      $user = $request->get('user');
 
-        $user = $request->get('user');
+      $email = Email::create($user);
 
-        $email = Email::create($user);
+      Mail::raw('Olá! Este e-mail é um lembrete de que este e-mail foi cadastrado para receber novidades do IPVtran.', function ($m) use ($user) {
+            $m->from('nao-responda@iprovida.org.br', 'IPVtran');
 
-        return $email;
+            $m->to($user['email'], $user['name'])->subject('[IPVtran] E-mail cadastrado na Newsletter!');
+        });
+
+      return $email;
+    }
+
+    public function api_contact(Request $request)
+    {
+      $user = $request->get('user');
+
+      Mail::send('emails.contact', ['user' => $user], function ($m) use ($user) {
+            $m->from('nao-responda@iprovida.org.br', 'IPVtran');
+
+            $m->to('contato@iprovida.org.br', 'IPVtran')->subject('[IPVtran] Contato');
+            // $m->to('luizhrqas@gmail.com', 'IPVtran')->subject('[IPVtran] Contato');
+        });
+
     }
 
     /**

@@ -19,11 +19,15 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+// Candidates (Inscrições)
 Route::get('candidates/export', 'CandidatesController@export');
 Route::post('candidates/api', 'CandidatesController@api');
+Route::post('candidates/api/search', 'CandidatesController@api_search');
 Route::get('candidates/{id}/download', 'CandidatesController@download');
 Route::resource('candidates', 'CandidatesController');
 
+// Emails (Newsletter)
 Route::get('emails/export', 'EmailsController@export');
 Route::post('emails/api', 'EmailsController@api');
+Route::post('emails/api/contact', 'EmailsController@api_contact');
 Route::resource('emails', 'EmailsController');

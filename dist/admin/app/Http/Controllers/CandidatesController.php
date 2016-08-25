@@ -15,7 +15,8 @@ class CandidatesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['api'] ]);
+        $except = ['api', 'api_search'];
+        $this->middleware('auth', ['except' => $except ]);
     }
 
     public function api(Request $request)
@@ -26,6 +27,18 @@ class CandidatesController extends Controller
         $email = Candidate::create($user);
 
         return Candidate::findOrFail($email->id);
+    }
+
+    public function api_search(Request $request)
+    {
+        $candidate = $request->get('candidate');
+
+        $search = Candidate::where('cpf', 'like', '%' . $candidate['cpf'] . '%')->firstOrFail();
+
+        $search->certification_attachment = url('uploads/' . $search->certification_attachment);
+        $search->cadastrado_em = $search->created_at->format('d/m/Y h:i:s');
+
+        return ['candidate' => $search];
     }
 
     /**

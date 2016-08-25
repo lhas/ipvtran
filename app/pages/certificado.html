@@ -24,8 +24,48 @@
 
               <button type="submit" ng-disabled="consultaForm.$invalid" class="btn btn-success btn-consultar-certificado"><i class="fa fa-send"></i> Consultar Certificado</button>
             </form>
-            
+
             <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" ng-bind="alert.msg"></div>
+
+            <div class="row" ng-if="candidate">
+              <div class="col-xs-4">
+
+                <div class="panel panel-primary" style="height: 150px;">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading"><i class="fa fa-user"></i> Nome Completo</div>
+                  <div class="panel-body">
+                    <p style="">{{candidate.name}}</p>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-xs-4">
+
+                <div class="panel panel-primary" style="height: 150px;">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading"><i class="fa fa-calendar"></i> Data de Inscrição</div>
+                  <div class="panel-body">
+                    <p style="">{{candidate.cadastrado_em}}</p>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-xs-4">
+
+                <div class="panel panel-primary" style="height: 150px;">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading"><i class="fa fa-download"></i> Baixar Certificado</div>
+                  <div class="panel-body text-center">
+                    <p ng-if="!candidate.certification_attachment">Não há certificado disponível.</p>
+                    <a href="{{candidate.certification_attachment}}" ng-if="candidate.certification_attachment" target="_blank" class="btn btn-success" style="margin-bottom: 30px;"><i class="fa fa-download"></i> Fazer Download</a>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
 
           </div>
           <div class="col-lg-3">
