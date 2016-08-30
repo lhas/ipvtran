@@ -110,7 +110,7 @@ function InscricaoCtrl($scope, $http, apiURL) {
     $scope.alerts.push({ type: 'warning', msg: 'Enviando...' });
 
     // AJAX
-    $http.post(apiURL + 'records/send', record).then(function(result) {
+    $http.post(apiURL + 'candidates/api', {user: record}).then(function(result) {
       $scope.record = result.data;
 
       // reset model
@@ -134,7 +134,7 @@ function ContatoCtrl($scope, $http, apiURL) {
     // waiting alert
     $scope.alerts.push({ type: 'warning', msg: 'Enviando...' });
 
-    $http.post(apiURL + 'emails/api/contact', {user: contact}).then(function(result) {
+    $http.post(apiURL + 'emails/api/contact', { user: contact }).then(function(result) {
       $scope.alerts.push({ type: 'success', msg: 'Seu contato foi enviado com sucesso!' });
     }).catch(function(error) {
       $scope.alerts.push({ type: 'danger', msg: 'Ocorreu um problema ao enviar o seu contato. Tente novamente mais tarde.' });

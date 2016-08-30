@@ -7,10 +7,10 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "serverfireteam/panel": "^1.4",
-        "guzzlehttp/guzzle": "~5.3|~6.0",
-        "barryvdh/laravel-cors": "^0.8.1",
-        "anouar/paypalpayment": "~1.0"
+        "appzcoder/crud-generator": "^1.1",
+        "laravelcollective/html": "^5.2",
+        "maatwebsite/excel": "^2.1",
+        "anouar/paypalpayment": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

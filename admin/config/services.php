@@ -19,10 +19,6 @@ return [
         'secret' => env('MAILGUN_SECRET'),
     ],
 
-    'mandrill' => [
-        'secret' => env('MANDRILL_SECRET'),
-    ],
-
     'ses' => [
         'key' => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
@@ -40,8 +36,8 @@ return [
     ],
 
     'paypal' => [
-        'client_id' => env('PAYPAL_CLIENT_ID'),
-        'secret' => env('PAYPAL_SECRET')
+        'client_id' => 'ATTH8r95E1dwpuEsqum32K23FMeskWqV3UzPtTvizeNPo6zmOc19J94jEDECygF5zq-KPM169GPenG5L',
+        'secret' => 'EIOcTL8_0uhlE9dlpcQn_XRIxH1oTiPtiiXzY5p13pu_lXwk_WEyD0oycC-qdNF4gYZCZRwSCXdzaVwP'
     ],
 
 ];

@@ -11,13 +11,23 @@
 |
 */
 
-// Redireciona para painel do Laravel
 Route::get('/', function () {
-    return Redirect::to('/panel');
+    return view('welcome');
 });
 
-// Contato
-Route::post('/send', 'Api\EmailController@send');
+Route::auth();
 
-// Inscrição
-Route::post('/records/send', 'Api\RecordsController@send');
+Route::get('/home', 'HomeController@index');
+
+// Candidates (Inscrições)
+Route::get('candidates/export', 'CandidatesController@export');
+Route::post('candidates/api', 'CandidatesController@api');
+Route::post('candidates/api/search', 'CandidatesController@api_search');
+Route::get('candidates/{id}/download', 'CandidatesController@download');
+Route::resource('candidates', 'CandidatesController');
+
+// Emails (Newsletter)
+Route::get('emails/export', 'EmailsController@export');
+Route::post('emails/api', 'EmailsController@api');
+Route::post('emails/api/contact', 'EmailsController@api_contact');
+Route::resource('emails', 'EmailsController');
