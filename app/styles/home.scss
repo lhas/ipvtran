@@ -255,3 +255,13 @@
     min-height: 130px;
     display: inline-block;
 }
+
+a.well {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+
+    &:hover {
+        color: #222;
+    }
+}
