@@ -100,11 +100,14 @@ class CandidatesController extends Controller
 
     public function api_search(Request $request)
     {
-        $candidate = $request->get('candidate');
+        $cpf = $request->get('cpf');
 
-        $search = Candidate::where('cpf', 'like', '%' . $candidate['cpf'] . '%')->firstOrFail();
+        $search = Candidate::where('cpf', 'like', '%' . $cpf . '%')->first();
 
-        $search->certification_attachment = url('uploads/' . $search->certification_attachment);
+        if(!empty($search->certification_attachment)) {
+            $search->certification_attachment = url('uploads/' . $search->certification_attachment);
+        }
+
         $search->cadastrado_em = $search->created_at->format('d/m/Y h:i:s');
 
         return ['candidate' => $search];
