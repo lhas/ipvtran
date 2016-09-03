@@ -28,7 +28,7 @@ class CandidatesController extends Controller
             config('services.paypal.secret'));
 
         $this->_apiContext->setConfig(array(
-            'mode' => 'sandbox',
+            'mode' => 'live',
             'http.ConnectionTimeOut' => 30,
             'log.LogEnabled' => true,
             'log.FileName' => __DIR__.'/../PayPal.log',

@@ -10,8 +10,6 @@
           
           <h1 class="page-title">Inscreva-se já:</h1>
 
-          <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" ng-bind="alert.msg"></div>
-
           <p>Preencha os campos a seguir:</p>
           
         </div>
@@ -165,6 +163,8 @@
           </div> <!-- .coluna-dir -->
 
         </form>
+
+          <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" ng-bind="alert.msg"></div>
 
       </div>
       <div ng-if="inscricao.concluido" class="row">
