@@ -22,3 +22,7 @@
 [03-09-2016 11:18:49] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
 [03-09-2016 11:18:49] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
 [03-09-2016 11:18:50] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[03-09-2016 11:24:37] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[03-09-2016 11:24:38] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[03-09-2016 11:24:38] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[03-09-2016 11:24:39] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
